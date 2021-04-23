@@ -11,8 +11,8 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: "DevQuiz",
       //home: SplashPage(),
-      home: ChallangePage(),
-      // home: HomePage(),
+      //home: ChallangePage(),
+      home: HomePage(),
     );
   }
 }
