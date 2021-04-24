@@ -1,3 +1,4 @@
+import 'package:DevQuiz/challenge/challange_page.dart';
 import 'package:DevQuiz/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:DevQuiz/core/core.dart';
 import 'package:DevQuiz/home/home_state.dart';
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       super.initState();
         controller.getUser();
         controller.getQuizzes();
-      controller.stateNotifier.addListener(() {
+        controller.stateNotifier.addListener(() {
         setState(() {});
       });
     }
@@ -67,6 +68,17 @@ class _HomePageState extends State<HomePage> {
                       title: e.title,
                       completed: "${e.questionAwnsered}/${e.questions.length}",
                       percent: e.questionAwnsered/e.questions.length,
+                      onTap: (){
+                        print("clicou");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChallangePage(
+                              questions: e.questions,
+                            )
+                          )
+                        );
+                      }
                     )).toList(),
                 ),
               )
